@@ -71,7 +71,7 @@ h3 {
 
 /* Adding background Image  */
 body {
-  background-image: url(images/clay-banks-cHNN5TA7wHA-unsplash.jpg);
+  background-image: url(./images/clay-banks-cHNN5TA7wHA-unsplash.jpg);
   z-index: -2;
   background-size: cover;
   background-repeat: no-repeat;
