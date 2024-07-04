@@ -1,0 +1,502 @@
+@import url(normalize.css);
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+/* Table Of Contents
+S.No.| Name of the content | - Lines
+1. Default Fonts - 24,25
+2. Setting var for color and fonts - 30 to 35
+3. Default font sizes, border box. - 38 to 70
+4. Background Image  - 73 to 77
+5. Header - 81 to 142
+6. Preamble - 152 to 187
+7. Explanation - 200 to 232
+8. Participation - 233 to 278
+9. Benefits - 280 to 317
+10. Requirements - 320 to 390 
+11. Footer- HTML, css, cc, A11y, GH - 393 to 420
+12. Sidebar as footer- 421 to 437
+    12.1 Design-selection - 440 to 459
+    12.2 Design-archives - 462 to 481
+    12.3 Resources - 483 to 502
+ */
+/* Fonts
+Body font
+font-family: "Montserrat", sans-serif;
+Heading font: 'EdScript', cursive;  
+*/
+
+/* SET DEFAULTS */
+:root {
+  --col1: whitesmoke;
+  --col2: #4f7942;
+  --col3: #023020;
+  --col4: rgb(1, 50, 32, 0.4);
+  --body: "Hind", sans-serif;
+  --heading: "Montserrat", sans-serif;
+}
+/* Adding some of the required default sizes for the site  */
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  font-family: var(--heading);
+}
+
+h2 {
+  font-family: var(--heading);
+  font-size: 1.3rem;
+}
+
+h3,
+h4,
+h5,
+h6,
+p,
+a {
+  font-family: var(--body);
+}
+
+p {
+  line-height: 1.25;
+  font-size: 1.15rem;
+  margin-bottom: 10px;
+  text-align: left;
+  padding: 0 10px;
+}
+
+h3 {
+  font-size: larger;
+}
+
+/* Adding background Image  */
+body {
+  background-image: url(/Code/images/clay-banks-cHNN5TA7wHA-unsplash.jpg);
+  z-index: -2;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* Adding Header background color, positioning the text asper the wireframe  */
+header {
+  background-color: var(--col2);
+  color: var(--col1);
+}
+
+header,
+.summary {
+  background-color: var(--col2);
+}
+
+header h2 {
+  position: absolute;
+  display: block;
+
+  top: -100px;
+  text-align: right;
+  width: 100%;
+  font: var(--heading);
+  font-size: 1.3rem;
+  padding: 1em;
+  background-color: var(--col2);
+}
+
+header h1 {
+  position: absolute;
+  top: -105px;
+  width: 100%;
+  height: auto;
+  padding-top: 1em;
+  display: inline-block;
+  font: var(--heading);
+  font-size: 3rem;
+  text-align: center;
+  font-weight: bold;
+  background-color: var(--col2);
+}
+
+/* The :: after code is used to add the word Itinerary */
+header h1::after {
+  content: " Itinerary";
+  font: var(--heading);
+  display: inline;
+  width: 100%;
+}
+
+#zen-summary {
+  padding-left: 20px;
+  padding-top: 20px;
+  padding-bottom: 0px;
+  color: var(--col1);
+}
+/* Removing the underlines for the links */
+#zen-summary a {
+  text-decoration: none;
+  color: var(--col1);
+  font-weight: bold;
+}
+/* Making the links underlined and italic style on hover */
+#zen-summary a:hover {
+  text-decoration: underline;
+  font-style: italic;
+}
+
+/* Adjusting the position of the body contnent with absolute positioning  */
+body {
+  position: absolute;
+  top: 80px;
+  color: var(--col1);
+}
+
+/* Added specific width percenatage as to align the content to the left side of the road  */
+.preamble {
+  padding-left: 1em;
+  width: 38%;
+  height: auto;
+}
+
+.preamble h3 {
+  font-size: 2rem;
+}
+
+/* Using :after to add the text Day 01, and animation moveupdow to make the text  move up and down  */
+.preamble::after {
+  content: "DAY 01";
+  font-family: var(--heading);
+  font-weight: bold;
+  position: absolute;
+  top: 9%;
+  margin-left: 65%;
+  font-size: 4.5rem;
+  animation: moveUpDown 2s infinite alternate;
+}
+
+@keyframes moveUpDown {
+  0% {
+    transform: translateY(20px);
+  }
+
+  100% {
+    transform: translateY(-20px);
+  }
+}
+/* Added background color to change on the hover  */
+.preamble:hover {
+  background-color: var(--col4);
+  border-radius: 10px;
+}
+
+/* Adding display flext to mthe main content as it willl be easy to adjust the content to the left and right, and the road dividedd the width irregularly.  */
+
+.main supporting {
+  display: flex;
+  flex-direction: column;
+}
+
+.main h3 {
+  font-size: 2rem;
+}
+/* Added specific width percenatage, and margin left as to move the text to the right side and fill the content to the right side of the road  */
+.explanation {
+  padding-right: 1em;
+  width: 48%;
+  height: auto;
+  flex-direction: column;
+  margin-left: 52%;
+}
+/* Using :after to add the text Day 02, and animation moveupdown to make the text  move up and down  */
+.explanation::after {
+  content: "DAY 02";
+  font-family: var(--heading);
+  font-weight: bold;
+  position: absolute;
+  top: 22%;
+  margin-left: -40%;
+  font-size: 4.5rem;
+  animation: moveUpDown 2s infinite alternate;
+}
+
+@keyframes moveUpDown {
+  0% {
+    transform: translateY(20px);
+  }
+
+  100% {
+    transform: translateY(-20px);
+  }
+}
+/* Adding background color to highlight content on hover  */
+.explanation:hover {
+  background-color: var(--col4);
+  border-radius: 10px;
+}
+/* Added specific width percenatage as to align the content to the left side of the road  */
+.participation {
+  padding-left: 1em;
+  flex-direction: column;
+  width: 44%;
+  height: auto;
+}
+
+/* Decoration for the links  */
+.participation a {
+  text-decoration: none;
+  color: var(--col1);
+  font-weight: bold;
+}
+/* Using :after to add the text Day 03, and animation moveupdown to make the text  move up and down and added margin lft to move the text to the other side of the road.  */
+.participation::after {
+  content: "DAY 03";
+  font-family: var(--heading);
+  font-weight: bold;
+  position: absolute;
+  top: 36%;
+  margin-left: 65%;
+  font-size: 4.5rem;
+  animation: moveUpDown 2s infinite alternate;
+}
+
+@keyframes moveUpDown {
+  0% {
+    transform: translateY(20px);
+  }
+
+  100% {
+    transform: translateY(-20px);
+  }
+}
+
+/* Adding background color to highlight content on hover  */
+.participation:hover {
+  background-color: var(--col4);
+  border-radius: 10px;
+}
+/* Decoration for the links on hover */
+.participation a:hover {
+  text-decoration: underline;
+  font-style: italic;
+}
+/* Added specific width percenatage, and margin left as to move the text to the right side and fill the content to the right side of the road  */
+.benefits {
+  padding: 1em;
+  width: 40%;
+  height: auto;
+  line-height: 1.5;
+  flex-direction: column;
+  margin-left: 60%;
+}
+/* Using :after to add the text Day 04, and animation moveupdown to make the text  move up and down  */
+.benefits::after {
+  content: "DAY 04";
+  font-family: var(--heading);
+  font-weight: bold;
+  position: absolute;
+  top: 49%;
+  margin-left: -40%;
+  font-size: 4.5rem;
+  max-width: 100%;
+  height: auto;
+
+  animation: moveUpDown 2s infinite alternate;
+}
+
+@keyframes moveUpDown {
+  0% {
+    transform: translateY(20px);
+  }
+
+  100% {
+    transform: translateY(-20px);
+  }
+}
+
+/* Adding background color to highlight content on hover  */
+.benefits:hover {
+  background-color: var(--col4);
+  border-radius: 10px;
+}
+
+
+.requirements {
+  display: inline-block;
+  padding-left: 1em;
+  flex-direction: column;
+  width: auto;
+  height: auto;
+
+}
+/* Adjusting the width of the each paragraph child of the requirements section  */
+.requirements p:first-child {
+  width: 52%;
+}
+
+.requirements p:nth-child(2) {
+  width: 45%;
+}
+
+.requirements p:nth-child(3) {
+  width: 40%;
+}
+
+.requirements p:nth-child(4) {
+  width: 38%;
+}
+
+.requirements p:nth-child(5) {
+  width: 35%;
+}
+
+.requirements p:last-child {
+  width: 33%;
+}
+/* Decoration for the links  */
+.requirements a {
+  text-decoration: none;
+  color: var(--col1);
+  font-weight: bold;
+}
+/* Decoration for the links on hover */
+.requirements a:hover {
+  text-decoration: underline;
+  font-style: italic;
+}
+
+/* Using :after to add the text Day 05, and animation moveupdown to make the text  move up and down  */
+.requirements::after {
+  content: "DAY 05";
+  font-family: var(--heading);
+  font-weight: bold;
+  position: absolute;
+  top: 67.5%;
+  margin-left: 65%;
+  font-size: 4.5rem;
+  animation: moveUpDown 2s infinite alternate;
+}
+
+@keyframes moveUpDown {
+  0% {
+    transform: translateY(20px);
+  }
+
+  100% {
+    transform: translateY(-20px);
+  }
+}
+
+/* Adding background color to highlight content on hover  */
+.requirements:hover {
+  background-color: var(--col4);
+  border-radius: 10px;
+}
+
+/* Giving the footer width 100%, asto make the footer content moveleft and right with the animation moveLeftRight  */
+footer {
+  padding: 10px;
+  display: inline-block;
+  max-width: 100%;
+  font-style: italic;
+  animation: moveLeftRight 20s infinite;
+}
+
+/* Thes keyframes allow the text to move left and right at equal speed, 86vw makes the text not to pass from the viewport */
+@keyframes moveLeftRight {
+  0% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(86vw);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+/* Removing the underlines for the links */
+footer a {
+  text-decoration: none;
+  color: whitesmoke;
+  font-weight: bold;
+}
+/* Makint the aside content as horizontal section with grid template areas  */
+.wrapper {
+  display: grid;
+  padding: 20px;
+  grid-template-areas:
+    "select  archives resources"
+    "select  archives resources";
+  grid-template-columns: 1fr 1fr 1fr;
+
+  background-color: var(--col3);
+}
+/* Decoration for the wrapper links  */
+.wrapper a {
+  text-decoration: none;
+  color: var(--col1);
+  font-weight: bold;
+  line-height: 2em;
+}
+/* Assiging gird template area  */
+.design-selection {
+  text-align: center;
+  grid-area: select;
+  grid-auto-columns: auto;
+  padding: 20px;
+}
+
+/* Adding background color to highlight content on hover  */
+.design-selection:hover {
+  background-color: var(--col2);
+}
+/* Removing the underlines for the links */
+.design-selection ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+/* Decoration for the links on hover */
+.design-selection ul li a:hover {
+  text-decoration: underline;
+  font-style: italic;
+}
+/* Assiging gird template area  */
+.design-archives {
+  text-align: center;
+  grid-area: archives;
+  grid-auto-columns: auto;
+  padding: 20px;
+}
+/* Adding background color to highlight content on hover  */
+.design-archives:hover {
+  background-color: var(--col2);
+}
+/* Removing the underlines for the links */
+.design-archives ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+/* Decoration for the links on hover */
+.design-archives ul li a:hover {
+  text-decoration: underline;
+  font-style: italic;
+}
+/* Assiging gird template area  */
+.zen-resources {
+  text-align: center;
+  grid-area: resources;
+  grid-auto-columns: auto;
+  padding: 20px;
+}
+/* Adding background color to highlight content on hover  */
+.zen-resources:hover {
+  background-color: var(--col2);
+}
+/* Removing the underlines for the links */
+.zen-resources ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+/* Decoration for the links on hover */
+.zen-resources ul li a:hover {
+  text-decoration: underline;
+  font-style: italic;
+}
